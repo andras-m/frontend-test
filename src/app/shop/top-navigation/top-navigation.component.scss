@@ -1,0 +1,12 @@
+.top-navigation {
+  background-color: #bbb;
+  ul {
+    padding-left: 0;
+    display: inline-flex;
+    list-style-type: none;
+    li a {
+      padding: 1rem;
+      color: #fff;
+    }
+  }
+}
