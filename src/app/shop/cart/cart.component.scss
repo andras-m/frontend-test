@@ -1,0 +1,11 @@
+.cart-container {
+  overflow: auto;
+}
+.cart-table {
+  border-collapse: collapse;
+  th, td {
+    border: 1px solid black;
+    min-width: 120px;
+    padding: .5rem;
+  }
+} 

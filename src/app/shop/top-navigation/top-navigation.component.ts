@@ -8,6 +8,4 @@ import { RouterLink } from '@angular/router';
   templateUrl: './top-navigation.component.html',
   styleUrl: './top-navigation.component.scss'
 })
-export class TopNavigationComponent {
-
-}
+export class TopNavigationComponent { }

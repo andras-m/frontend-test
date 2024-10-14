@@ -9,6 +9,4 @@ import { TopNavigationComponent } from "./shop/top-navigation/top-navigation.com
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'frontend-test';
-}
+export class AppComponent { }

@@ -1,1 +1,18 @@
-<p>product-list works!</p>
+<h1>Products</h1>
+<section class="products-container">
+  @for (product of products | async; track product.id) {
+    <div class="product-card">
+      <div class="img-container">
+        <img [ngSrc]="product.img" width="230" height="230" alt="{{ product.name }}" class="product-img">
+      </div>
+      <h3>{{ product.name }}</h3>
+      <p>Price: {{ product.price | currency }}</p>
+      <p>Available: {{ product.availableAmount }}</p>
+      <p>Minimum Order: {{ product.minOrderAmount }}</p>
+      <div class="order-container">
+        <input type="number" #quantityInput [min]="product.minOrderAmount" [max]="product.availableAmount" [value]="product.minOrderAmount">
+        <button (click)="addToCart(product, quantityInput.valueAsNumber)">Add to Cart</button>
+      </div>
+    </div>
+  }
+</section>
