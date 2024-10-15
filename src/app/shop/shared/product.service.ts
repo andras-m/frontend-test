@@ -10,6 +10,10 @@ export class ProductService {
   private http = inject(HttpClient);
   private products: Product[] = [];
 
+  /**
+  * Get the products from the server, or use the existing products array if it is not empty
+  * @return {Observable<Product[]>} Array of the products as an Observable
+  */
   getProducts(): Observable<Product[]> {
     if (this.products.length > 0) {
       return of(this.products);
@@ -21,7 +25,12 @@ export class ProductService {
     }
   }
 
-  updateProductAmount(productId: string, amount: number) {
+  /**
+   * Update the amount of available products
+  * @param {string} productId  The id of the product
+  * @param {number} amount  The amount of the product
+  */
+  updateProductAmount(productId: string, amount: number): void {
     const product = this.products.find(p => p.id === productId);
     if (product && product.availableAmount >= amount) {
       product.availableAmount -= amount;

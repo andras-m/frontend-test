@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CartService } from '../shared/cart.service';
 import { CommonModule } from '@angular/common';
-import { Cart } from '../shared/cart.interface';
+import { CartItem } from '../shared/cart-item.interface';
 
 @Component({
   selector: 'app-cart',
@@ -12,12 +12,16 @@ import { Cart } from '../shared/cart.interface';
 })
 export class CartComponent implements OnInit {
   private cartService = inject(CartService);
-  cartItems: Cart[] = [];
+  cartItems: CartItem[] = [];
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
   }
 
+  /**
+  * Calculate the total price of the products
+  * @return {number} Total price
+  */
   getTotalPrice(): number {
     return this.cartService.getTotalPrice();
   }

@@ -1,6 +1,15 @@
 # FrontendTest
 
+This is a simple front-end application fetching a list of products from an endpoint. Users are able to add the products to the cart in various amounts, with respect to `minOrderAmount` and `availableAmount`. The app updates the `availableAmount` locally, when we add the items to the cart.  
+Cart page displays the products added to the cart and calculates the total price. The application doesn't store the cart items in localstorage or by any other means, so the cart will be empty after a page refresh.
+
+The detailed documentation is available in the `/documentation` folder.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+
+## Install dependencies
+
+Run `npm install` to install the dependencies.
 
 ## Development server
 
@@ -17,10 +26,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 

@@ -22,6 +22,13 @@ export class ProductListComponent implements OnInit {
     this.products = this.productService.getProducts();
   }
 
+  /**
+  * Add a product to the cart.
+  * If the product quantity is valid, it will add the item and update the available amount as well. 
+  * Otherwise it shows an alert dialog
+  * @param {Product} product The product object that we want to add to the cart
+  * @param {number} quantity The number of products that we want to add to the cart
+  */
   addToCart(product: Product, quantity: number) {
     if (quantity >= product.minOrderAmount && quantity <= product.availableAmount) {
       this.cartService.addToCart(product, quantity);
