@@ -62,7 +62,6 @@ describe('ProductService', () => {
 
   it('should decrease available amount of the product', () => {
     service['products'] = [...mockProducts];
-
     service.updateProductAmount('1', 20);
 
     const updatedProduct = service['products'].find(p => p.id === '1');
@@ -71,11 +70,10 @@ describe('ProductService', () => {
 
   it('should not update the product if amount is greater than availableAmount', () => {
     service['products'] = [...mockProducts];
+    service.updateProductAmount('2', 200);
 
-    service.updateProductAmount('1', 200);
-
-    const updatedProduct = service['products'].find(p => p.id === '1');
-    expect(updatedProduct!.availableAmount).toBe(100);
+    const updatedProduct = service['products'].find(p => p.id === '2');
+    expect(updatedProduct!.availableAmount).toBe(150);
   });
 
   it('should not update any product if productId is not found', () => {
